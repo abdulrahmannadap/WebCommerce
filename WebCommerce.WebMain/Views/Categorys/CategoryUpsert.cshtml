@@ -1,0 +1,20 @@
+﻿@model Category
+<form class="form-control text-center" asp-controller="Categorys" asp-action="CategoryUpsert" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+    <div class="form-text">
+        <h1>Add New Category</h1>
+    </div>
+    <div>
+        <input asp-for="CategoryName" placeholder="Enter Category" class=" form-control"/>
+        <span asp-validation-for="CategoryName" class="text-danger"></span>
+
+    </div>
+    <input type="submit" class="btn btn-outline-primary mt-2 " value="Add" />
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
